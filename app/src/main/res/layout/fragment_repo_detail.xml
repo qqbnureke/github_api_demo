@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRepositoryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/textColor"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/tvStarCount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="Repository Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStarCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawableEnd="@drawable/ic_star"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvRepositoryName"
+        tools:text="11111" />
+
+    <TextView
+        android:id="@+id/tvOwner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@id/tvStarCount"
+        app:layout_constraintStart_toStartOf="@id/tvRepositoryName"
+        app:layout_constraintTop_toBottomOf="@id/tvRepositoryName"
+        tools:text="Owner Name" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/tvStarCount"
+        app:layout_constraintStart_toStartOf="@id/tvRepositoryName"
+        app:layout_constraintTop_toBottomOf="@id/tvOwner"
+        tools:text="Description Description Description Description  Description Description Description  Description Description Description" />
+
+    <TextView
+        android:id="@+id/tvUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/show_repository_link"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/tvStarCount"
+        app:layout_constraintStart_toStartOf="@id/tvRepositoryName"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/tvStarCount"
+        app:layout_constraintTop_toBottomOf="@id/tvUrl"
+        tools:text="11.11.11" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTopics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
